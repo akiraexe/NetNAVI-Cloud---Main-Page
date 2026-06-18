@@ -1,10 +1,8 @@
 @import "tailwindcss";
 
-/* Forzamos el escaneo explícito de la nueva estructura en v4 */
-@source "./components/**/*.{ts,tsx}";
-@source "./App.tsx";
+/* El escaneo de contenido ahora se gestiona desde tailwind.config.ts */
 
-@theme {
+:root {
   --color-brand-lightBg: #FAF6F0;    
   --color-brand-textDark: #1E1B18;   
   --color-brand-warmOrange: #D96B43; 
@@ -14,5 +12,8 @@
 
 /* Aplicamos las variables nativas usando clases utilitarias de Tailwind */
 body {
-  @apply bg-[--color-brand-lightBg] text-[--color-brand-textDark] antialiased;
+  background-color: var(--color-brand-lightBg);
+  color: var(--color-brand-textDark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
