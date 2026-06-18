@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+/* Forzamos el escaneo explícito de la nueva estructura en v4 */
+@source "./components/**/*.{ts,tsx}";
+@source "./App.tsx";
+
+@theme {
+  --color-brand-lightBg: #FAF6F0;    
+  --color-brand-textDark: #1E1B18;   
+  --color-brand-warmOrange: #D96B43; 
+  --color-brand-accentGold: #EBB15B; 
+  --color-brand-mutedRow: #F3EDE4;   
+}
+
+/* Aplicamos las variables nativas usando clases utilitarias de Tailwind */
+body {
+  @apply bg-[--color-brand-lightBg] text-[--color-brand-textDark] antialiased;
+}
