@@ -1,19 +1,37 @@
+/* src/index.css */
 @import "tailwindcss";
 
-/* El escaneo de contenido ahora se gestiona desde tailwind.config.ts */
-
-:root {
-  --color-brand-lightBg: #FAF6F0;    
-  --color-brand-textDark: #1E1B18;   
-  --color-brand-warmOrange: #D96B43; 
-  --color-brand-accentGold: #EBB15B; 
-  --color-brand-mutedRow: #F3EDE4;   
+@theme {
+  --color-brand-lightBg: #F2EAD9;    
+  --color-brand-textDark: #2B2621;   
+  --color-brand-warmOrange: #E05A2B; 
+  --color-brand-accentGold: #DF9A28; 
+  --color-brand-mutedRow: #E6DBC4;   
 }
 
-/* Aplicamos las variables nativas usando clases utilitarias de Tailwind */
 body {
-  background-color: var(--color-brand-lightBg);
-  color: var(--color-brand-textDark);
+  background-color: var(--color-brand-lightBg) !important;
+  color: var(--color-brand-textDark) !important;
+  font-family: ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Añadimos un sutil gradiente radial de fondo para romper la monotonía plana */
+  background-image: radial-gradient(circle at top right, #FAF6F0 0%, var(--color-brand-lightBg) 100%) !important;
+}
+
+/* Forzado de textos con transiciones suaves incorporadas */
+h1, h2, h3, h4, p, span, li {
+  color: var(--color-brand-textDark) !important;
+  opacity: 1 !important;
+  transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Efecto global para suavizar las interacciones de todas las tarjetas */
+.interactive-card {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease;
+}
+.interactive-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 20px -8px rgba(43, 38, 33, 0.15);
+  border-color: var(--color-brand-accentGold) !important;
 }
