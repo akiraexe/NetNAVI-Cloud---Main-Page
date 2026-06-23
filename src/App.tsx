@@ -1,10 +1,11 @@
 import React from 'react';
-import { Header } from './Header';  // Changed from default to named import
+import { Header } from './Header';
 import Hero from './Hero';
 import { Problem } from './Problem';
 import { Approach } from './Approach';
 import { HowItWorks } from './HowItWorks';
 import { EvolvingSolutions } from './EvolvingSolutions';
+import Ecosistema from './Ecosistema'; // <-- 1. Importamos el nuevo componente
 import { PartnerSolutions } from './PartnerSolutions';
 import { OperationalSupport } from './OperationalSupport';
 import { WhoItsFor } from './WhoItsFor';
@@ -19,14 +20,15 @@ const App: React.FC = () => {
         <Hero />
         <Problem />
         <EvolvingSolutions />
+        <Ecosistema /> {/* <-- 2. Lo inyectamos en la posición estratégica de conversión */}
         <Approach />
         <HowItWorks />
         <PartnerSolutions />
         <OperationalSupport />
         <WhoItsFor />
         <CTA />
-        <Footer />
       </main>
+      <Footer />
     </div>
   );
 };
